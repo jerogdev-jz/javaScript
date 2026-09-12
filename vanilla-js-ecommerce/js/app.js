@@ -23,6 +23,10 @@ import products from "./products.js";
 const categoryFiltered = products.filter(producto => 
     producto.category === "home");
 
+const productFound = products.find(producto =>
+    producto.id === 18);
+
+
 console.log(products);
 console.log(categoryFiltered);
-
+console.log(productFound);
