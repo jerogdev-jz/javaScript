@@ -18,8 +18,8 @@ const products = [
     stock: 9,
     brand: "Aero",
     featured: true
-},
-{
+  },
+  {
     id: 3,
     title: "Audífonos WavePods Pro",
     category: "electronics",
@@ -38,8 +38,8 @@ const products = [
     stock: 22,
     brand: "Pulse",
     featured: true
-},
-{
+  },
+  {
     id: 5,
     title: "Monitor Vision 27 4K",
     category: "electronics",
@@ -48,8 +48,8 @@ const products = [
     stock: 12,
     brand: "Vision",
     featured: false
-},
-{
+  },
+  {
     id: 6,
     title: "Teclado Mecánico Strike RGB",
     category: "gaming",
@@ -58,8 +58,8 @@ const products = [
     stock: 28,
     brand: "Strike",
     featured: true
-},
-{
+  },
+  {
     id: 7,
     title: "Mouse Gamer Phantom X",
     category: "gaming",
@@ -68,8 +68,8 @@ const products = [
     stock: 40,
     brand: "Phantom",
     featured: false
-},
-{
+  },
+  {
     id: 8,
     title: "Silla Gamer Titan Pro",
     category: "gaming",
@@ -78,8 +78,8 @@ const products = [
     stock: 7,
     brand: "Titan",
     featured: true
-},
-{
+  },
+  {
     id: 9,
     title: "Mochila Urban Explorer",
     category: "fashion",
@@ -88,8 +88,8 @@ const products = [
     stock: 31,
     brand: "UrbanPeak",
     featured: false
-},
-{
+  },
+  {
     id: 10,
     title: "Tenis Runner Air",
     category: "fashion",
@@ -98,8 +98,8 @@ const products = [
     stock: 24,
     brand: "Runner",
     featured: true
-},
-{
+  },
+  {
     id: 11,
     title: "Sudadera Essential",
     category: "fashion",
@@ -108,8 +108,8 @@ const products = [
     stock: 45,
     brand: "Northline",
     featured: false
-},
-{
+  },
+  {
     id: 12,
     title: "Cafetera Barista Mini",
     category: "home",
@@ -118,8 +118,8 @@ const products = [
     stock: 14,
     brand: "BrewHouse",
     featured: true
-},
-{
+  },
+  {
     id: 13,
     title: "Lámpara LED Aura",
     category: "home",
@@ -128,8 +128,8 @@ const products = [
     stock: 38,
     brand: "Lumina",
     featured: false
-},
-{
+  },
+  {
     id: 14,
     title: "Aspiradora Cyclone Max",
     category: "home",
@@ -138,8 +138,8 @@ const products = [
     stock: 11,
     brand: "Cyclone",
     featured: true
-},
-{
+  },
+  {
     id: 15,
     title: "Botella Térmica Adventure 1L",
     category: "sports",
@@ -148,8 +148,8 @@ const products = [
     stock: 50,
     brand: "Adventure",
     featured: false
-},
-{
+  },
+  {
     id: 16,
     title: "Mancuernas Ajustables PowerFit",
     category: "sports",
@@ -160,15 +160,15 @@ const products = [
     featured: true
   },
   {
-      id: 17,
-      title: "Tapete Yoga Balance Pro",
+    id: 17,
+    title: "Tapete Yoga Balance Pro",
     category: "sports",
     price: 849,
     rating: 4.3,
     stock: 27,
     brand: "Balance",
     featured: false
-},
+  },
   {
     id: 18,
     title: "Cámara ActionCam 4K",
@@ -178,8 +178,8 @@ const products = [
     stock: 8,
     brand: "ActionCam",
     featured: true
-},
-{
+  },
+  {
     id: 19,
     title: "Bocina Bluetooth SoundBox",
     category: "electronics",
@@ -190,16 +190,15 @@ const products = [
     featured: false
   },
   {
-      id: 20,
-      title: "Consola RetroBox Mini",
-      category: "gaming",
+    id: 20,
+    title: "Consola RetroBox Mini",
+    category: "gaming",
     price: 1999,
     rating: 4.8,
     stock: 0,
     brand: "RetroBox",
     featured: true
-  },
-  
+  }
 ];
 
 export default products;
