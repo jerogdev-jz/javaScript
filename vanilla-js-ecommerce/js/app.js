@@ -45,6 +45,32 @@ const productSummary = products.map(producto => ({
     })
 );
 
+// every() + some()
+
+const hasOutOfStock = products.some(producto =>
+    producto.stock === 0    
+);
+
+const allProductsHsaveStock = products.every(producto => 
+    producto.stock > 0  
+);
+
+console.log(hasOutOfStock);
+console.log(allProductsHsaveStock);
+
+//reduce()
+
+const totalStock = products.reduce((stock, producto) => {
+    return stock + producto.stock;
+}, 0)
+
+const inventoryValue = products.reduce((valorTotalStock, producto) => {
+    return valorTotalStock + (producto.stock * producto.price)
+}, 0)
+
+console.log(totalStock);
+console.log(inventoryValue);
+
 console.log(products);
 console.log(categoryFiltered);
 console.log(productFound);
