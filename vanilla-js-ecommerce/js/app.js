@@ -1,5 +1,6 @@
 import products from "./products.js";
 
+console.log(products);
 //Intento 3 - Correcto
 
 /* const categoryFiltered = () => {
@@ -18,15 +19,19 @@ import products from "./products.js";
       return producto.category === "home";
     }); */
     
-// Versión arrow function
+// Filter
 
 const categoryFiltered = products.filter(producto => 
     producto.category === "home");
+
+console.log(categoryFiltered);
 
 // Find()
 
 const productFound = products.find(producto =>
     producto.id === 18);
+
+console.log(productFound);
 
 // Map()
 
@@ -44,6 +49,10 @@ const productSummary = products.map(producto => ({
     price: producto.price,
     })
 );
+
+console.log(productTitles);
+console.log(productPrices)
+console.log(productSummary);
 
 // every() + some()
 
@@ -71,9 +80,26 @@ const inventoryValue = products.reduce((valorTotalStock, producto) => {
 console.log(totalStock);
 console.log(inventoryValue);
 
+// findindex()
+
+const productIndex = products.findIndex(producto => 
+    producto.id === 15
+);
+
+console.log(productIndex);
+
+// sort()
+
+const productsByLowestPrice = [...products];
+
+console.log(productsByLowestPrice);
+
+productsByLowestPrice.sort((a, b) => a.price - b.price);
+
+console.log(productsByLowestPrice);
 console.log(products);
-console.log(categoryFiltered);
-console.log(productFound);
-console.log(productTitles);
-console.log(productPrices)
-console.log(productSummary);
+
+const productsByHighestPrice = [...products];
+
+productsByHighestPrice.sort((a, b) => b.price - a.price);
+console.log(productsByHighestPrice);
