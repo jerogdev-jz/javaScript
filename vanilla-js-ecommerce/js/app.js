@@ -150,3 +150,67 @@ const filteredCatalog = products.filter(producto =>
 
 console.log(filteredCatalog);
 console.log(products);
+
+// 13 Filtros convinados
+
+const minPrice = 500;
+const maxPrice = 1500;
+
+const productsByPrice = products.filter(producto => 
+    producto.price >= minPrice && producto.price <= maxPrice
+);
+
+console.log(productsByPrice);
+
+// 14 Filtros convinados
+
+    const minRating = 4.6;
+
+    const productsByRating = products.filter(producto => 
+        producto.rating >= minRating
+    )
+
+    console.log(productsByRating);
+
+// 15 Filtros convinados
+
+const categoria = "eLeCtRoNiCs   ";
+const categoriaN = categoria.trim().toLowerCase();
+const incluye = "  P";
+const incluyeN = incluye.trim().toLowerCase();
+const precioMin = 2500;
+const precioMax = 25000;
+const ratingMin = 4.6;
+
+const catalogResult = products.filter(producto => 
+    producto.category.toLowerCase() === categoriaN)
+    .filter(producto =>
+        producto.title.toLowerCase().includes(incluyeN))
+    .filter(producto => 
+        producto.price >= precioMin && producto.price <= precioMax)
+    .filter(producto =>
+        producto.rating >= ratingMin)
+    .sort((a, b) => a.price - b.price);
+
+console.log(products);
+console.log(catalogResult);
+
+// 16 Función con parametros
+
+function filterCatalog(categoriaSeleccionada, texto, precioMinimo, precioMaximo, ratingMinimo) {
+    const resultado = products.filter(producto => 
+    producto.category.toLowerCase() === categoriaSeleccionada.trim().toLowerCase())
+    .filter(producto =>
+        producto.title.toLowerCase().includes(texto.trim().toLowerCase()))
+    .filter(producto => 
+        producto.price >= precioMinimo && producto.price <= precioMaximo)
+    .filter(producto =>
+        producto.rating >= ratingMinimo)
+    .sort((a, b) => a.price - b.price);
+
+    return resultado;
+}
+
+const catalogoResult = filterCatalog("GaminG ", "  GamEr", 500, 6000, 4.5);
+
+console.log(catalogoResult);
