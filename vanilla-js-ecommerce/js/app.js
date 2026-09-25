@@ -180,7 +180,7 @@ const incluye = "  P";
 const incluyeN = incluye.trim().toLowerCase();
 const precioMin = 2500;
 const precioMax = 25000;
-const ratingMin = 4.6;
+const ratingMin = 4;
 
 const catalogResult = products.filter(producto => 
     producto.category.toLowerCase() === categoriaN)
@@ -197,20 +197,84 @@ console.log(catalogResult);
 
 // 16 Función con parametros
 
-function filterCatalog(categoriaSeleccionada, texto, precioMinimo, precioMaximo, ratingMinimo) {
-    const resultado = products.filter(producto => 
-    producto.category.toLowerCase() === categoriaSeleccionada.trim().toLowerCase())
+// 17 Evitar dependencia de variables externas
+
+// 18 Desetructuración
+
+// 19 Valores predeterminados
+
+// 20 valores vacios
+
+// 21 Switch
+
+// 22 sin mutación
+
+const filtros = {
+    categoriaS: "gAmInG  ",
+    texto: "  GaMeR",
+    precioMinimo: 500,
+    precioMaximo: 35000,
+    orden: "price-desc",
+    ratingMinimo: 4 
+};
+
+
+
+function filterCatalog(catalogo, filtros) {
+    
+    const { 
+        categoriaS = "", 
+        texto = "", 
+        precioMinimo = 0, 
+        precioMaximo = Infinity,
+        orden,
+        ratingMinimo = 0
+        } = filtros;
+
+    const categoriaSN = categoriaS.trim().toLowerCase();
+    const textoN = texto.trim().toLowerCase();
+    
+    const resultado = catalogo.filter(producto => 
+    categoriaSN === "" ||
+    producto.category.toLowerCase() === categoriaSN)
     .filter(producto =>
-        producto.title.toLowerCase().includes(texto.trim().toLowerCase()))
-    .filter(producto => 
+        producto.title.toLowerCase().includes(textoN))
+    .filter(producto =>     
         producto.price >= precioMinimo && producto.price <= precioMaximo)
     .filter(producto =>
-        producto.rating >= ratingMinimo)
-    .sort((a, b) => a.price - b.price);
+        producto.rating >= ratingMinimo);
+    let resultadoOrdenado;
 
-    return resultado;
+switch (orden) {
+    case "price-asc":
+        resultadoOrdenado = [...resultado].sort(
+            (a, b) => a.price - b.price
+        );
+        break;
+
+    case "price-desc":
+        resultadoOrdenado = [...resultado].sort(
+            (a, b) => b.price - a.price
+        );
+        break;
+
+    case "rating-desc":
+        resultadoOrdenado = [...resultado].sort(
+            (a, b) => b.rating - a.rating
+        );
+        break;
+
+    default:
+        resultadoOrdenado = [...resultado].sort(
+            (a, b) => a.price - b.price
+        );
+        break;
 }
 
-const catalogoResult = filterCatalog("GaminG ", "  GamEr", 500, 6000, 4.5);
+return resultadoOrdenado;
+}
+
+const catalogoResult = filterCatalog(products, filtros);
 
 console.log(catalogoResult);
+
