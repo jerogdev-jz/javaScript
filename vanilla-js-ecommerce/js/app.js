@@ -289,3 +289,21 @@ const discountedProducts = products.map(producto => ({
 
 console.log(products);
 console.log(discountedProducts);
+
+// 24 .map() para actualizar elemento especifico
+
+const productIdToUpdate = 17;
+const newStock = 26;
+
+const updatedStockProducts = products.map(producto => ({
+    ...producto,
+    stock: producto.id === productIdToUpdate
+        ? newStock
+        : producto.stock
+}));
+
+console.log(products);
+console.log(updatedStockProducts);
+
+// 25 .map() modificando a partir del valor anterior
+
