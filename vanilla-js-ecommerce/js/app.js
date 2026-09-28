@@ -210,7 +210,7 @@ console.log(catalogResult);
 // 22 sin mutación
 
 const filtros = {
-    categoriaS: "gAmInG  ",
+    categoriaS: "gAmInG  ", 
     texto: "  GaMeR",
     precioMinimo: 500,
     precioMaximo: 35000,
@@ -278,3 +278,14 @@ const catalogoResult = filterCatalog(products, filtros);
 
 console.log(catalogoResult);
 
+// 23 Copia de arrays vs copia de objetos (.map())
+
+const discountedProducts = products.map(producto => ({
+    ...producto,
+    price: producto.featured
+        ? producto.price * .90
+        : producto.price
+}));
+
+console.log(products);
+console.log(discountedProducts);
