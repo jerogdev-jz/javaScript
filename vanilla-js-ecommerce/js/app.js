@@ -307,3 +307,51 @@ console.log(updatedStockProducts);
 
 // 25 .map() modificando a partir del valor anterior
 
+const productIdToRestock = 18;
+
+const incomingStock = 10;
+
+const restockedProducts = products.map(producto => ({
+    ...producto,
+    stock: producto.id === productIdToRestock
+        ? producto.stock + incomingStock
+        : producto.stock
+    
+}));
+
+console.log(products);
+console.log(restockedProducts);
+
+// 26 .map() añadiendo una propiedad derivada
+
+const productWithAvailability = products.map(producto => ({
+    ...producto,
+    availability: producto.stock > 0
+        ? "in-stock"
+        : "out-of-stock"
+}));
+
+console.log(products);
+console.log(productWithAvailability);
+
+// 27 funciones puras
+
+function getAvailability(stockP) {
+        if (stockP > 0) {
+            return "in-stock"
+        } else {
+            return "out-of-stock"
+        };
+};
+
+const productWithAvailabilityTwo = products.map(producto => ({
+    ...producto,
+    availability: getAvailability(producto.stock)
+}));
+
+console.log(products);
+console.log(productWithAvailabilityTwo);
+
+// 28 Funcion descuentos
+
+
