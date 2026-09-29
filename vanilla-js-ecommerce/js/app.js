@@ -354,4 +354,91 @@ console.log(productWithAvailabilityTwo);
 
 // 28 Funcion descuentos
 
+function calculateDiscount(precio, porcentajeDescuento) {
+    return precio * (1 - porcentajeDescuento)
+}
 
+const discountedProductsTwo = products.map(producto => ({
+    ...producto,
+    price: producto.featured
+        ? calculateDiscount(producto.price, .10)
+        : producto.price
+}));
+
+console.log(products);
+console.log(discountedProductsTwo);
+
+// 29 Composición de funciones
+
+const processedProducts = products.map(producto => ({
+    ...producto,
+    availability: getAvailability(producto.stock),
+    finalPrice: producto.featured
+        ? calculateDiscount(producto.price, .10)
+        : producto.price
+}));
+
+console.log(products);
+console.log(processedProducts);
+
+// 30 funcion como callback de .map
+
+function processProduct(producto) {
+    return {
+        ...producto,
+        availability: getAvailability(producto.stock),
+        finalPrice: producto.featured
+            ? calculateDiscount(producto.price, .10)
+            : producto.price
+    }
+};
+
+const processedProductsTwo = products.map(processProduct);
+
+console.log(products)
+console.log(processedProductsTwo)
+
+// 31 reduce() con objetos
+
+const cart = [
+    {
+        id: 1,
+        title: "pay de queso",
+        price: 35,
+        quantity: 7,
+    },
+    {
+        id: 2,
+        title: "pay de oreo",
+        price: 38,
+        quantity: 3, 
+    },
+    {
+        id: 3,
+        title: "pay de limón",
+        price: 30,
+        quantity: 2,
+    },
+    {
+        id: 4,
+        title: "pay de cajeta",
+        price: 40,
+        quantity: 1,
+    }
+];
+
+const cartSubtotal = cart.reduce((subtotal, carro) => {
+    return subtotal + (carro.price * carro.quantity)
+}, 0);
+
+console.log(cart);
+console.log(cartSubtotal);
+
+// 32 reduce() para copntar unidades
+
+const cartItemCount = cart.reduce((piezas, elemento) => {
+    return piezas + elemento.quantity 
+}, 0);
+
+console.log(cart);
+console.log(cartItemCount);
