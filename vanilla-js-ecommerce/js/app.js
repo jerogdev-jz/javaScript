@@ -442,3 +442,101 @@ const cartItemCount = cart.reduce((piezas, elemento) => {
 
 console.log(cart);
 console.log(cartItemCount);
+
+// 33 reduce() con objeto qacumulador
+
+const cartSummary = cart.reduce((acumulador, carro) => { 
+       acumulador.subtotal = acumulador.subtotal + (carro.price * carro.quantity);
+       acumulador.itemCount = acumulador.itemCount + carro.quantity;
+        return acumulador;
+}, {
+    subtotal: 0,
+    itemCount: 0,
+});
+
+console.log(cart);
+console.log(cartSummary);
+
+// 34 reduce() sin modificar acumulador
+
+const cartSummaryInmutable = cart.reduce((acumulador,carro) => {
+    return {
+        subtotal: acumulador.subtotal + (carro.quantity * carro.price),
+        itemCount: acumulador.itemCount + carro.quantity
+    }
+}, {
+    subtotal: 0,
+    itemCount: 0,
+})
+
+console.log(cart);
+console.log(cartSummaryInmutable);
+
+// 35 reduce() para agrupar datos
+
+const productsByCategory = products.reduce((acumulador, producto) => {
+    const categoria = producto.category;
+    acumulador[categoria] = (acumulador[categoria] || 0) + 1;
+    return acumulador;
+}, {});
+
+console.log(cart);
+console.log(productsByCategory);
+
+// 36 reduce() para sumar por categoria
+
+const stockByCategory = products.reduce((acumulador, producto) => {
+    const categoria = producto.category;
+    acumulador[categoria] = (acumulador[categoria] || 0) + producto.stock;
+    return acumulador;
+}, {});
+
+console.log(cart);
+console.log(stockByCategory);
+
+// 37 reduce() para resumen completo
+
+const categorySummary = products.reduce((acumulador, producto) => {
+    const categoria = producto.category;
+    if (!acumulador[categoria]) {
+        acumulador[categoria] = {
+            productCount: 0,
+            totalStock: 0,
+        };
+    }
+
+    acumulador[categoria].productCount += 1;
+    acumulador[categoria].totalStock += producto.stock;
+
+    return acumulador;
+
+}, {});
+
+console.log(cart);
+console.log(categorySummary);
+
+// 38 reduce() para calcular promedios
+
+const categoryPriceSummary = products.reduce((acumulador, producto) => {
+    const categoria = producto.category;
+    if (!acumulador[categoria]) {
+        acumulador[categoria] = {
+            totalPrice: 0,
+            productCount: 0,
+        };
+    }
+
+    acumulador[categoria].totalPrice += producto.price; 
+    acumulador[categoria].productCount += 1;
+        
+    return acumulador;
+
+}, {});
+
+Object.values(categoryPriceSummary).forEach(valor => {
+    valor.averagePrice = valor.totalPrice / valor.productCount;
+});
+
+console.log(categoryPriceSummary);
+
+// 39 Convertir resumen en funcion pura
