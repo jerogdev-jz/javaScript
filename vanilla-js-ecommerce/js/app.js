@@ -540,3 +540,97 @@ Object.values(categoryPriceSummary).forEach(valor => {
 console.log(categoryPriceSummary);
 
 // 39 Convertir resumen en funcion pura
+
+function calculateCartSummary(carro) {
+    return carro.reduce((acumulador, elemento) => {
+        return {
+            subtotal: acumulador.subtotal + (elemento.price * elemento.quantity),
+            itemCount: acumulador.itemCount + elemento.quantity,
+        }
+    }, {
+        subtotal: 0,
+        itemCount: 0,
+    })
+};
+
+const cartSummaryResult = calculateCartSummary(cart);
+
+console.log(cartSummaryResult);
+
+// 40 Separacion por funciones
+
+function sortProducts(catalogo, orden) {
+        const copiaCatalogo = [...catalogo];
+    
+        switch (orden) {
+            case "price-asc":
+                copiaCatalogo.sort(
+                    (a, b) => a.price - b.price
+                );
+                break;
+
+            case "price-desc":
+                copiaCatalogo.sort(
+                    (a, b) => b.price - a.price
+                );
+                break;
+
+            case "rating-desc":
+                copiaCatalogo.sort(
+                    (a, b) => b.rating - a.rating
+                );
+                break;
+
+            default:
+                copiaCatalogo.sort(
+                    (a, b) => a.price - b.price
+                );
+                break;
+        }
+
+        return copiaCatalogo
+    };
+
+const filtrosD = {
+    categoriaS: "gAmInG  ", 
+    texto: "  GaMeR",
+    precioMinimo: 500,
+    precioMaximo: 35000,
+    orden: "price-desc",
+    ratingMinimo: 4 
+};
+
+function filterCatalogTwo(catalogo, filtros) {
+    
+    const { 
+        categoriaS = "", 
+        texto = "", 
+        precioMinimo = 0, 
+        precioMaximo = Infinity,
+        orden,
+        ratingMinimo = 0
+        } = filtros;
+
+    const categoriaSN = categoriaS.trim().toLowerCase();
+    const textoN = texto.trim().toLowerCase();
+    
+    const resultado = catalogo.filter(producto => 
+    categoriaSN === "" ||
+    producto.category.toLowerCase() === categoriaSN)
+    .filter(producto =>
+        producto.title.toLowerCase().includes(textoN))
+    .filter(producto =>     
+        producto.price >= precioMinimo && producto.price <= precioMaximo)
+    .filter(producto =>
+        producto.rating >= ratingMinimo);
+    
+    return sortProducts(resultado, orden);
+
+}
+
+const catalogoResultD = filterCatalogTwo(products, filtrosD);
+
+console.log(catalogoResultD);
+
+// 41 Separar la normalización de textos
+
