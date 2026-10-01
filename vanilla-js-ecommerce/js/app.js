@@ -634,3 +634,50 @@ console.log(catalogoResultD);
 
 // 41 Separar la normalización de textos
 
+function normalizeText(entrada) {
+    const normalized = entrada.trim().toLowerCase();
+
+    return normalized;
+}
+
+function filterCatalogTwo(catalogo, filtros) {
+    
+    const { 
+        categoriaS = "", 
+        texto = "", 
+        precioMinimo = 0, 
+        precioMaximo = Infinity,
+        orden,
+        ratingMinimo = 0
+        } = filtros;
+
+    const categoriaSN = normalizeText(categoriaS);
+    const textoN = normalizeText(texto);
+    
+    const resultado = catalogo.filter(producto => 
+    categoriaSN === "" ||
+        normalizeText(producto.category) === categoriaSN)
+    .filter(producto =>
+        normalizeText(producto.title).includes(textoN))
+    .filter(producto =>     
+        producto.price >= precioMinimo && producto.price <= precioMaximo)
+    .filter(producto =>
+        producto.rating >= ratingMinimo);
+    
+    return sortProducts(resultado, orden);
+
+}
+
+const catalogoResultT = filterCatalogTwo(products, filtrosD);
+
+console.log(catalogoResultT);
+
+// 42 Composición de funciones
+
+function prepareCatalog(catalogo, filtros) {
+   return filterCatalogTwo(catalogo, filtros).map(processProduct);
+};
+
+const catalogReady = prepareCatalog(products, filtrosD);
+
+console.log(catalogReady);
