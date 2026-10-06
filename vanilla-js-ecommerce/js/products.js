@@ -198,6 +198,217 @@ const products = [
     stock: 0,
     brand: "RetroBox",
     featured: true
+  },
+
+  // =========================
+  // NUEVOS PRODUCTOS
+  // =========================
+
+  {
+    id: 21,
+    title: "Tablet NovaTab 10",
+    category: "electronics",
+    price: 6499,
+    rating: 4.6,
+    stock: 17,
+    brand: "NovaTech",
+    featured: false
+  },
+  {
+    id: 22,
+    title: "Audífonos SoundBeat X",
+    category: "electronics",
+    price: 2199,
+    rating: 4.5,
+    stock: 29,
+    brand: "SoundBox",
+    featured: true
+  },
+  {
+    id: 23,
+    title: "Monitor Vision 24 Full HD",
+    category: "electronics",
+    price: 5299,
+    rating: 4.5,
+    stock: 15,
+    brand: "Vision",
+    featured: false
+  },
+  {
+    id: 24,
+    title: "Control Gamer Phantom Pro",
+    category: "gaming",
+    price: 1599,
+    rating: 4.4,
+    stock: 26,
+    brand: "Phantom",
+    featured: false
+  },
+  {
+    id: 25,
+    title: "Headset Gamer Strike 7.1",
+    category: "gaming",
+    price: 2299,
+    rating: 4.6,
+    stock: 19,
+    brand: "Strike",
+    featured: true
+  },
+  {
+    id: 26,
+    title: "Teclado Gamer Phantom Mini",
+    category: "gaming",
+    price: 1399,
+    rating: 4.3,
+    stock: 32,
+    brand: "Phantom",
+    featured: false
+  },
+  {
+    id: 27,
+    title: "Chamarra Urban Wind",
+    category: "fashion",
+    price: 1899,
+    rating: 4.5,
+    stock: 21,
+    brand: "UrbanPeak",
+    featured: true
+  },
+  {
+    id: 28,
+    title: "Tenis Northline Street",
+    category: "fashion",
+    price: 1999,
+    rating: 4.4,
+    stock: 28,
+    brand: "Northline",
+    featured: false
+  },
+  {
+    id: 29,
+    title: "Mochila Runner Active",
+    category: "fashion",
+    price: 1099,
+    rating: 4.3,
+    stock: 36,
+    brand: "Runner",
+    featured: false
+  },
+  {
+    id: 30,
+    title: "Licuadora BlendMax Pro",
+    category: "home",
+    price: 2799,
+    rating: 4.5,
+    stock: 18,
+    brand: "BlendMax",
+    featured: true
+  },
+  {
+    id: 31,
+    title: "Lámpara Aura Desk Pro",
+    category: "home",
+    price: 999,
+    rating: 4.3,
+    stock: 34,
+    brand: "Lumina",
+    featured: false
+  },
+  {
+    id: 32,
+    title: "Cafetera BrewHouse Compact",
+    category: "home",
+    price: 2899,
+    rating: 4.6,
+    stock: 13,
+    brand: "BrewHouse",
+    featured: false
+  },
+  {
+    id: 33,
+    title: "Banda Elástica PowerFit Pro",
+    category: "sports",
+    price: 799,
+    rating: 4.4,
+    stock: 43,
+    brand: "PowerFit",
+    featured: false
+  },
+  {
+    id: 34,
+    title: "Mochila Deportiva Adventure",
+    category: "sports",
+    price: 1199,
+    rating: 4.5,
+    stock: 25,
+    brand: "Adventure",
+    featured: true
+  },
+  {
+    id: 35,
+    title: "Kit Yoga Balance",
+    category: "sports",
+    price: 1499,
+    rating: 4.4,
+    stock: 20,
+    brand: "Balance",
+    featured: false
+  },
+
+  // Nueva categoría: books
+
+  {
+    id: 36,
+    title: "JavaScript Desde Cero",
+    category: "books",
+    price: 699,
+    rating: 4.6,
+    stock: 32,
+    brand: "CodeBooks",
+    featured: true
+  },
+  {
+    id: 37,
+    title: "Diseño Web Moderno",
+    category: "books",
+    price: 799,
+    rating: 4.5,
+    stock: 24,
+    brand: "CodeBooks",
+    featured: false
+  },
+  {
+    id: 38,
+    title: "Introducción a la Inteligencia Artificial",
+    category: "books",
+    price: 899,
+    rating: 4.7,
+    stock: 18,
+    brand: "TechPress",
+    featured: true
+  },
+
+  // Nueva categoría: toys
+
+  {
+    id: 39,
+    title: "Robot Programable RoboKid",
+    category: "toys",
+    price: 1899,
+    rating: 4.6,
+    stock: 16,
+    brand: "RoboFun",
+    featured: true
+  },
+  {
+    id: 40,
+    title: "Kit de Construcción TechBlocks",
+    category: "toys",
+    price: 1499,
+    rating: 4.5,
+    stock: 23,
+    brand: "TechBlocks",
+    featured: false
   }
 ];
 
